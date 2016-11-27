@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://anmolkoul.github.io/# -->
+<html class=" desktop">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Three-tify on Terrorism</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href="./css/css.css" rel="stylesheet" type="text/css" />
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style-desktop.css" />
+    <script src="./js/skel.min.js"></script>
+    <script src="./js/skel-panels.min.js"></script>
+    <script src="./js/init.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/dc.css" />
+    <link rel="stylesheet" type="text/css" href="./css/stylenew.css" />
+    <link rel="stylesheet" type="text/css" href="./css/introjs.css" />
+    <link rel="stylesheet" type="text/css" href="./js/leaflet/leaflet.css" />
+    <script src="./js/leaflet/leaflet.js"></script>
+    <script src="./js/underscore.js"></script>
+    <script src="./js/leaflet-heat.js"></script>
+
+    <!-- Style for intro tour button -->
+    <style>
+        .intro_button{
+            margin-top: 38px;
+            float: left;
+            margin-left: 30px;
+            border-radius: 4px;
+            background-color: #26547C;
+            color: white;
+        }
+    </style>
+	
+	<style>
+        .reset_button{
+            margin-top: 38px;
+            float: left;
+            margin-left: 3px;
+            border-radius: 4px;
+            background-color: #26547C;
+            color: white;
+        }
+        
+    </style>
+
+
+
+
+</head>
+<body>
+<div id="foundation" style="position: relative; left: 0; right: 0; top: 0; backface-visibility: hidden; transition: -webkit-transform 0.25s ease-in-out;">
+    <div id="wrapper">
+        <!-- Header -->
+        <div id="header">
+            <button class="intro_button" type="button" autofocus="" onclick="javascript:introJs().setOption('showProgress', true).start();">Start Tour!</button>
+		      	<button class="reset_button" type="button" autofocus="" onclick="javascript:dc.filterAll();dc.redrawAll();">Reset All</button>
+			<div class="container">
+                <!-- Logo -->
+                <div id="logo">
+                    <h1><a>Terrorism across the world since 1985</a></h1>
+                </div>
+                <!-- Nav -->
+            </div>
+        </div>
+
+
+
+        <!-- Page -->
+        <div id="page" style="margin-top:-85px;">
+            <div class="container">
+            
+                <!-- ROW: timeline-->
+                <div class="row">
+                    <!-- ROW: timeline-->
+                    <div id="attack-dates-chart" class="6u chart-wrapper" data-step="1" data-intro="Drag to select the time period of the events." style="font-weight: normal" data-position="bottom">
+    				      	<div class="chart-title bold"> <strong> Attacks Over Time </strong></div>
+                    </div>
+                    
+
+                    <!-- ROW: map -->
+    
+                    <div id="map" class="6u chart-wrapper" data-step="2" data-intro="Click the map to view specific events." style="font-weight: normal" data-position="right">
+    					      <div class="chart-title bold"> <strong> Map </strong></div>                    
+                    <svg width="400" height="220"></svg>
+    				      	</div>    
+                </div>
+
+
+
+                <div class="row">
+                    <!-- ROW: filter -->
+                    <div id="countries" class="2u chart-wrapper" data-step="9" data-intro="Select to filter by country." style="font-weight: normal" data-position="right">
+							      <div class="chart-title"> <strong> Country Selector </strong> </div>	                        
+                    </div>
+                    
+        						<div class="4u">
+        				    <div> <span> &nbsp</span></div>
+        						</div> 
+                                       
+                    <!-- The details -->                                     
+                    <div id="total-attack-number" class="2u chart-wrapper" data-step="3" data-intro="View the details of the event." style="font-weight: normal" data-position="bottom">
+        						<div class="chart-title"> <strong> Total Attacks Selected </strong> </div>  </div>
+                    
+                    <div id="total-death-number" class="2u chart-wrapper" data-step="4" data-intro="View the details of the event." style="font-weight: normal" data-position="bottom">
+        						<div class="chart-title"> <strong> Total Deaths </strong> </div></div>
+                    
+                    <div id="total-wounded-number" class="2u chart-wrapper" data-step="5" data-intro="View the details of the event." style="font-weight: normal" data-position="bottom">
+        						<div class="chart-title"> <strong> Total Injuries </strong> </div></div>				
+                    
+        				</div>
+                
+                <!-- ROW: charts -->
+                <div class="row">
+                    <!-- Text Cloud -->
+                    <div id="textcloud" style="height:330px;width:415px" class="4u chart-wrapper" data-step="8" data-intro="View the key words for these terrorism attacks." style="font-weight: normal" data-position="right">
+                    <div class="chart-title"> <strong> Motive </strong> </div>
+                    <!--<svg width="200" height="300"></svg>--!>
+                    </div>
+
+                    <!-- Target Chart -->
+                    <div id="attack-target-chart" class="4u chart-wrapper" data-step="7" data-intro="View the target distribution of the attacks." style="font-weight: normal" data-position="top">
+                    <div class="chart-title"><strong>Targets of Terrorists</strong></div>
+                    <svg width="300" height="300"></svg>
+                    </div>
+
+                    <!-- Attack Type Chart -->
+                    <div id="attack-type-chart" class="4u chart-wrapper" data-step="6" data-intro="View the method distribution of the attacks." style="font-weight: normal" data-position="left">
+                    <div class="chart-title"> <strong>Type of Attacks</strong> </div>
+                    <svg width="300" height="300"></svg>
+                    </div>   
+                </div> 
+                
+                <div class="row"><svg width="10" height="70"></svg></div>
+                <div class="row">
+        						<div class="3u">
+        				    <div> <span> &nbsp</span></div>
+        						</div> 
+
+                    <div class="6u chart-wrapper"><center>
+                    <font size=1>This dashboard was brought to you by:</font><br>
+                    <img src="https://wiki.smu.edu.sg/1617t1ISSS608g1/img_auth.php/b/ba/Threetify_logo.png" width="250"><br>
+                    <font size=1>To view our report, click <a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016_17T1_Group6_Project_Report">here</a><br>
+                    To go back to our homepage, click <a href="github">here</a><br></font>
+                    </div>
+                </div>  
+
+        						<div class="3u">
+        				    <div> <span> &nbsp</span></div>
+        						</div> 
+                
+                 
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <script src="./js/crossfilter.js" type="text/javascript"></script>
+    <script src="./js/d3.js" type="text/javascript"></script>
+    <script src="./js/dc.js" type="text/javascript"></script>
+    <script src="./js/queue.js" type="text/javascript"></script>
+    <script src="./js/Dashboard.js" type="text/javascript"></script>
+    <script src="./js/intro.js" type="text/javascript"></script>
+	<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+
+	<script>
+	var datas=[];
+		 var final=[];
+		 var origin=[];
+		 var strings=[];
+		 var temp_obj=[];
+		 var textarea="protest sabotage attack Revolutionary advocate Independence life fighting fighting Independence protest sabotage protest sabotage Jews War worked Institute Historical organization Holocaust Racially black white neighborhood conflicting retaliating American hostages hijacking TWA 847 police Nazi war crimes Jews FBI deportation charges dismissed evidence militant Jewish organizations decision protest sabotage protest sabotage protest sabotage Suspected racial fire protest Arab Americans Palestinian protest sabotage bombing campaign universities airlines computer-related targets modern technology large-scale organizations human freedom protest sabotage protest sabotage protest sabotage tensions LTTE Muslims LTTE Sinhalese buddhists LTTE fighting independent Tamil tensions LTTE Sinhalese LTTE fighting independent Tamil liberated anti-Semitic Nation white supremacist mission Jews government unrighteous protest recruitment cartographers Army protest sabotage protest sabotage protest sabotage protest government included Nations white supremacist mission version Order government unrighteous protest military protest government armed rebels protest government armed rebels protest sabotage protest sabotage protest sabotage protest sabotage protest sabotage assassination battle LTTE TELO 200 killed battle 9 days kidnapping LTTE TELO fighters Tamils fighting independent Sinhalese Tamils fighting independent Sinhalese Tamil sources security forces incident government suspected LTTE incident negotiations Tamil Liberation Front Sri Lankan ministers attack 130 individuals responsibility credible ETA assassinated protest sabotage protest sabotage protest sabotage protest torture animals Suspected white supremacist Nation harassed law enforcement agencies protest businesses supplies protest businesses supplies protest presence protest sabotage protest institutions supplies protest organizations solicited advertisements companies associated communist government protest based businesses supplies avenge deaths calves chained brief lives protest sabotage protest sabotage considered sacred Navajo Hopi Indian tribes perpetrators protest destruction development land protest America misery appease America protest slaughter animals Waite's released exchange release Lebanese prisoners held Israel protest businesses supplies prevent Mexican government extraditing commemorate radical protest LDS Church suspected actions protest sabotage protest sabotage protest militant protest policies groups setting arson  Meat Company protest based businesses protest policies protest government incidents sabotage power equipment protest sabotage California protest destruction culpability American companies environmental protest sabotage protest sabotage protest sabotage hijackers demanded 17 Arab convicted bombers Kuwaiti prisons exchange safe release passengers Liberation Tigers Tamil Eelam (LTTE) fighting separate Tamil target damage environment protest businesses supplies protest government suspected protest protest promoting protest sabotage protest animals protest sabotage protest sabotage Suspected opposition towards negotiate political social issues Socialist Republic Vietnam ALF fire strike campaign industry slaughters poisons people world deadly chemicals nutrition protest logging protest sabotage motivations racial undertones court system appeal 1972 conviction possessing bombs blacks preferential treatment courts protest perceived supporters government American-Vietnamese community protest sabotage protest sabotage protest protest protest magazine stridently protest Circuit Court Appeals prioritizing civil rights African Americans climate numerous violence African American males White women authorities suspected bomb protest sabotage Planned Parenthood protest protest Islam numerology interpretations Quran opposed fundamentalists fire bombings mosques protest Earth protest environmentalist groups toppling power protest protest sabotage protest sabotage furious supreme court decision banning protesters blocking intimidate Jews protest sabotage protest sabotage protest sabotage protest sabotage protest deployment soldiers denounce plebiscite determine political protest deployment soldiers denounce plebiscite determine political protest stridently anti-communist protest criticizing Front Liberation Vietnam purged battle military Liberation Tigers Tamil Eelam (LTTE) territory protest sabotage critic organizations democracy suspected assassinated boycott sponsored suspected supporter Military junta protest sabotage supporter presidency vocal critic organizations democracy suspected assassinated sponsored suspected supporter Military junta protest sabotage protest sabotage protest government protest sabotage protest sabotage protest sabotage protest industry protest industry protest sabotage protest fear attack retribution crimes humanity protest sabotage protest trade protest abortions ";
+		 var j=0
+
+
+			 console.log(textarea)
+			 var wordArray = textarea.split(" ");
+			 wordArray.forEach(function(d) {
+					     if(d=="of"||d=="Of"||d=="to"||d=="To"||d=="a"||d=="in"||d=="In"
+							 ||d=="the"||d=="The"||d=="and"||d=="And"||d=="but"||d=="But"
+							 ||d=="was"||d=="Was"||d=="he"||d=="He"||d=="She"||d=="an"||d=="An")
+					 return
+					 textarea=textarea.replace(eval("/" + d + "/ig"),function($1){
+						 if($1 in datas)
+							 datas[$1]++;
+						 else
+							 datas[$1]=1;
+						 return " "
+					 })
+
+
+			 });
+			 console.log(textarea)
+
+			 for(i in datas){
+				 var wordObject={};
+				 wordObject.name=i;
+				 wordObject.value=datas[i];
+				 wordObject.itemStyle=createRandomItemStyle();
+				 final.push(wordObject)
+			 }
+		     var compare=function(obj1,obj2){
+				 var val1=obj1.value;
+				 var val2=obj2.value;
+				 if(val1>val2)
+				 	return -1;
+				 else if(val1<val2)
+				 	return 1
+				 else
+				 	return 0
+			 }
+		 	 final.sort(compare)
+		 	 for(i=0;i<30;i++){
+				 temp_obj[i]=final[i]
+			 }
+		 	 final=temp_obj;
+			 console.log(final)
+			 function createRandomItemStyle() {
+				 return {
+					 normal: {
+						 color: 'rgb(' + [
+							 Math.round(Math.random() * 160),
+							 Math.round(Math.random() * 160),
+							 Math.round(Math.random() * 160)
+						 ].join(',') + ')'
+					 }
+				 };
+			 }
+			 // 路径配置
+			 require.config({
+				 paths: {
+					 echarts: 'http://echarts.baidu.com/build/dist'
+				 }
+			 });
+
+			 // 使用
+			 require(
+					 [
+						 'echarts',
+						 'echarts/chart/bar',
+						 'echarts/chart/wordCloud'// 使用柱状图就加载bar模块，按需加载
+					 ],
+					 function (ec) {
+						 // 基于准备好的dom，初始化echarts图表
+						 var myChart = ec.init(document.getElementById('textcloud'));
+
+						 var option = {
+							 title: {
+								 text: 'Word Cloud'
+							 },
+							 tooltip: {
+								 show: true
+							 },
+							 series: [{
+								 name: 'Word Count',
+								 type: 'wordCloud',
+								 size: ['100%', '100%'],
+								 textRotation : [0, 45, 90, -45],
+								 textPadding: 0,
+								 autoSize: {
+									 enable: true,
+									 minSize: 14
+								 },
+								 data:final
+							 }]
+						 };
+
+						 // 为echarts对象加载数据
+						 myChart.setOption(option);
+					 }
+			 );
+
+		 function isNumeric(sText) {
+		 var ValidChars="0123456789"
+		 var IsNumber=true
+		 var Char
+		 for(var i=0;i<sText.length&&IsNumber==true;i++){
+		 Char=sText.charAt(i)
+		 if(ValidChars.indexOf(Char)==-1){
+		 IsNumbe=false
+		 }
+		 }
+		 return IsNumber
+		 }
+	</script>
+</div>
+
+</body>
+</html>
