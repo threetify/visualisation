@@ -1,5 +1,5 @@
 /*
- Leaflet 1.0.1+ffcfcc1, a JS library for interactive maps. http://leafletjs.com
+ Leaflet 1.0.1+ffcfcc1, a JS library for interactive maps. https://leafletjs.com
  (c) 2010-2016 Vladimir Agafonkin, (c) 2010-2011 CloudMade
 */
 (function (window, document, undefined) {
@@ -4652,7 +4652,7 @@ L.gridLayer = function (options) {
  * @example
  *
  * ```js
- * L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar'}).addTo(map);
+ * L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar'}).addTo(map);
  * ```
  *
  * @section URL template
@@ -4661,7 +4661,7 @@ L.gridLayer = function (options) {
  * A string of the following form:
  *
  * ```
- * 'http://{s}.somedomain.com/blabla/{z}/{x}/{y}{r}.png'
+ * 'https://{s}.somedomain.com/blabla/{z}/{x}/{y}{r}.png'
  * ```
  *
  * `{s}` means one of the available subdomains (used sequentially to help with browser parallel requests per domain limitation; subdomain values are specified in options; `a`, `b` or `c` by default, can be omitted), `{z}` — zoom level, `{x}` and `{y}` — tile coordinates. `{r}` can be used to add @2x to the URL to load retina tiles.
@@ -4669,7 +4669,7 @@ L.gridLayer = function (options) {
  * You can use custom keys in the template, which will be [evaluated](#util-template) from TileLayer options, like this:
  *
  * ```
- * L.tileLayer('http://{s}.somedomain.com/{foo}/{z}/{x}/{y}.png', {foo: 'bar'});
+ * L.tileLayer('https://{s}.somedomain.com/{foo}/{z}/{x}/{y}.png', {foo: 'bar'});
  * ```
  */
 
@@ -8741,7 +8741,7 @@ L.extend(L.SVG, {
 	// corresponding to the class name passed. For example, using 'line' will return
 	// an instance of [SVGLineElement](https://developer.mozilla.org/docs/Web/API/SVGLineElement).
 	create: function (name) {
-		return document.createElementNS('http://www.w3.org/2000/svg', name);
+		return document.createElementNS('https://www.w3.org/2000/svg', name);
 	},
 
 	// @function pointsToPath(rings: Point[], closed: Boolean): String
