@@ -2836,7 +2836,7 @@
             }
         }), o.extend(o.SVG, {
             create: function(t) {
-                return e.createElementNS("http://www.w3.org/2000/svg", t)
+                return e.createElementNS("https://www.w3.org/2000/svg", t)
             },
             pointsToPath: function(t, e) {
                 var i, n, s, r, a, h, l = "";
@@ -3930,7 +3930,7 @@
     }, o.Control.Attribution = o.Control.extend({
         options: {
             position: "bottomright",
-            prefix: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+            prefix: '<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
         },
         initialize: function(t) {
             o.setOptions(this, t), this._attributions = {}
