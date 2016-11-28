@@ -76,10 +76,10 @@ console.log(maxDate);
   
   
   // create additonal maps
-  var grayscale = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-            attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'}),
-      osmde = L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
-            attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'});
+  var grayscale = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'}),
+      osmde = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+            attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'});
   
   
   
@@ -105,9 +105,9 @@ console.log(maxDate);
   var drawMap = function(){
 
    map.setView([30, 20], 1);
-    mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-    L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-     attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+    mapLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+     attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>',
         maxZoom: 5,
        minZoom: 1,
       }).addTo(map);
